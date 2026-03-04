@@ -19,16 +19,24 @@ This Go application connects to the Wikipedia recent changes stream, collects st
 - **HTTP handler**: Safely snapshots stats for API responses
 
 ## Usage
-1. **Run the application:**
-   ```bash
-   go run -race ./ch-1/cmd/
-   ```
-   The server listens on port 7000 by default.
 
-2. **Query stats:**
-   ```bash
-   curl http://localhost:7000/stats
-   ```
+1. **Build the wikiapp binary:**
+  ```bash
+  go build -o ch-1/wikiapp ./ch-1/cmd/main.go
+  ```
+
+2. **Run the wikiapp binary:**
+  ```bash
+  ./ch-1/wikiapp
+  ```
+  The server listens on port 7000 by default.
+
+3. **Query stats:**
+  ```bash
+  curl http://localhost:7000/stats
+  ```
+
+...existing code...
 
 ## Testing
 - Run all tests (with race detector):
