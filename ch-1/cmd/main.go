@@ -85,7 +85,7 @@ func main() {
 		listenPort = ":" + os.Args[1]
 	}
 
-	messages := make(chan WikipediaChange, 100) // buffered channel to handle bursts of messages
+	messages := make(chan WikipediaChange)
 
 	statsCollector := &StatsCollector{
 		UniqueUsers: make(map[string]struct{}),
