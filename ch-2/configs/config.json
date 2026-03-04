@@ -1,0 +1,4 @@
+{
+    "feed_url": "https://stream.wikimedia.org/v2/stream/recentchange",
+    "stats_port": "7000"
+}

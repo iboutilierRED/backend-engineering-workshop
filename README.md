@@ -20,6 +20,9 @@ This Go application connects to the Wikipedia recent changes stream, collects st
 
 ## Usage
 
+
+### ch-1: Run Locally
+
 1. **Build the wikiapp binary:**
   ```bash
   go build -o ch-1/wikiapp ./ch-1/cmd/main.go
@@ -34,6 +37,30 @@ This Go application connects to the Wikipedia recent changes stream, collects st
 3. **Query stats:**
   ```bash
   curl http://localhost:7000/stats
+  ```
+
+### ch-2: Run with Docker
+
+1. **Build the Go binary for Docker (from ch-2 directory):**
+  ```bash
+  cd ch-2
+  GOOS=linux GOARCH=arm64 go build -o ch2-wikiapp ./cmd/main.go
+  ```
+
+2. **Build the Docker image:**
+  ```bash
+  docker build -t ch2-wikiapp .
+  ```
+
+3. **Run the Docker container:**
+  ```bash
+  docker run --rm -p 8080:7000 --name=wikiapp ch2-wikiapp
+  ```
+  The server will be available at port 8080 on your host.
+
+4. **Query stats:**
+  ```bash
+  curl http://localhost:8080/stats
   ```
 
 ...existing code...
