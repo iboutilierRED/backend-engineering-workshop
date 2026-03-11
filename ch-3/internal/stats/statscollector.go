@@ -1,9 +1,9 @@
-package utils
+package stats
 
 import (
 	"sync"
 
-	"github.com/iboutilierRED/backend-workshop/ch-3/models"
+	"github.com/iboutilierRED/backend-workshop/ch-3/wikievents/internal/models"
 )
 
 type StatsCollector struct {
